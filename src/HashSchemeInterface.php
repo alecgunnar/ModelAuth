@@ -5,7 +5,7 @@
  * @author Alec Carpenter <alecgunnar@gmail.com>
  */
 
-namespace AlecGunnar\SimpleAuth;
+namespace AlecGunnar\ModelAuth;
 
 interface HashSchemeInterface {
     /**

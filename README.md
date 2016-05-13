@@ -10,9 +10,9 @@ First we'll list the classes we'll be using, and also define a password to test 
 ```php
 <?php
 
-use AlecGunnar\SimpleAuth\AuthenticatableInterface;
-use AlecGunnar\SimpleAuth\HashScheme\BcryptHashScheme;
-use AlecGunnar\SimpleAuth\Authenticator;
+use AlecGunnar\ModelAuth\AuthenticatableInterface;
+use AlecGunnar\ModelAuth\HashScheme\BcryptHashScheme;
+use AlecGunnar\ModelAuth\Authenticator;
 
 $password = 'superSecret123';
 ```

@@ -1,9 +1,9 @@
 <?php
 
-use AlecGunnar\SimpleAuth\Authenticator;
-use AlecGunnar\SimpleAuth\HashScheme\BcryptHashScheme;
-use AlecGunnar\SimpleAuth\AuthenticatableInterface;
-use AlecGunnar\SimpleAuth\HashSchemeInterface;
+use AlecGunnar\ModelAuth\Authenticator;
+use AlecGunnar\ModelAuth\HashScheme\BcryptHashScheme;
+use AlecGunnar\ModelAuth\AuthenticatableInterface;
+use AlecGunnar\ModelAuth\HashSchemeInterface;
 
 class TestAuthenticatable implements AuthenticatableInterface {
     public function getPasswordHash (): string { }

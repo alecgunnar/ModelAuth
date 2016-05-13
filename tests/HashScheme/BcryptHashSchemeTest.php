@@ -1,6 +1,6 @@
 <?php
 
-use AlecGunnar\SimpleAuth\HashScheme\BcryptHashScheme;
+use AlecGunnar\ModelAuth\HashScheme\BcryptHashScheme;
 
 require_once __DIR__ . '/GenericHashSchemeTests.php';
 

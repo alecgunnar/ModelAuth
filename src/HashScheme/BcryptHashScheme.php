@@ -5,9 +5,9 @@
  * @author Alec Carpenter <alecgunnar@gmail.com>
  */
 
-namespace AlecGunnar\SimpleAuth\HashScheme;
+namespace AlecGunnar\ModelAuth\HashScheme;
 
-use AlecGunnar\SimpleAuth\HashSchemeInterface;
+use AlecGunnar\ModelAuth\HashSchemeInterface;
 
 class BcryptHashScheme implements HashSchemeInterface {
     /**

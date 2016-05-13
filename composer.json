@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlecGunnar\\SimpleAuth\\": "src/"
+            "AlecGunnar\\ModelAuth\\": "src/"
         }
     }
 }
