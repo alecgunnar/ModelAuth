@@ -6,12 +6,20 @@ A simple library to provide only the most basic authentication capabilities to y
 
 Let us examine a sample scenario where we have a model called `User`, and we need to check a password against an object of this model.
 
+First we'll list the classes we'll be using, and also define a password to test with.
 ```php
 <?php
 
 use AlecGunnar\SimpleAuth\AuthenticatableInterface;
 use AlecGunnar\SimpleAuth\HashScheme\BcryptHashScheme;
 use AlecGunnar\SimpleAuth\Authenticator;
+
+$password = 'superSecret123';
+```
+
+Here is the sample `User` model.
+```php
+// ...
 
 class User implements AuthenticatableInterface {
     private $hash;    
@@ -24,14 +32,27 @@ class User implements AuthenticatableInterface {
         return $hash;
     }
 }
+```
 
-$password = 'superSecret123';
+Next we'll create an object of the hash scheme, specifically the BCrypt hash scheme. With this, we'll generate a hash of the password we defined earlier
+```php
+// ...
 
 $hashScheme = new BcryptHashScheme();
 $hashedPassword = $hashScheme->generateHash($password);
+```
+
+We now need to create a user to authenticate, to which we will also assign the password hash we previously generated.
+```php
+// ...
 
 $user = new User();
 $user->setPasswordHash($hashedPassword);
+```
+
+Now we can actually authenticate the user we just created using the password we defined at the beginning. This is a trivial example, and it should be obvious that this result will be `It is a valid password!` being echoed.
+```php
+// ...
 
 $auth = new Authenticator($hashScheme);
 
@@ -41,5 +62,3 @@ if ($auth->authenticate($user, $password)) {
     echo "Not a valid password...";
 }
 ```
-
-What is important to notice here is, that the model implements the `AuthenticatableInterface`. This interface specifies the `getPasswordHash` method, which is used by the `authenticate` method of the `Authenticator` class to get the hash from the model. The `Authenticator` class takes as its only argument, an instance of the `HashSchemeInterface`. The the above example we used the `BcryptHashScheme` to demonstrate.
