@@ -57,8 +57,8 @@ Now we can actually authenticate the user we just created using the password we 
 $auth = new Authenticator($hashScheme);
 
 if ($auth->authenticate($user, $password)) {
-    echo "It is a valid password!";
+    echo 'It is a valid password!';
 } else {
-    echo "Not a valid password...";
+    echo 'Not a valid password...';
 }
 ```
