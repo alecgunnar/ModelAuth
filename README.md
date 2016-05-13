@@ -1,4 +1,4 @@
-# Simple Authentication
+# Model Authentication
 
 A simple library to provide only the most basic authentication capabilities to your application.
 
