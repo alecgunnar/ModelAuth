@@ -13,5 +13,5 @@ interface AuthenticatableInterface {
      *
      * @return string
      */
-    public function getPasswordHash ();
+    public function getPasswordHash (): string;
 }

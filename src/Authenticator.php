@@ -27,7 +27,7 @@ class Authenticator {
      * @param string $password How we will authenticate the entity (assuming its correct)
      * @return boolean True if password matches, false otherwise
      */
-    public function authenticate (AuthenticatableInterface $entity, string $password) {
+    public function authenticate (AuthenticatableInterface $entity, string $password): bool {
         return $this->hashScheme->verifyPassword($entity->getPasswordHash(), $password);
     }
 }

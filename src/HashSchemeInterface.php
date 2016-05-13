@@ -15,7 +15,7 @@ interface HashSchemeInterface {
      * @param string $password
      * @return boolean
      */
-    public function verifyPassword (string $hash, string $password);
+    public function verifyPassword (string $hash, string $password): bool;
 
     /**
      * Generate a hash from a password
@@ -23,5 +23,5 @@ interface HashSchemeInterface {
      * @param string $password
      * @return string
      */
-    public function generateHash (string $password);
+    public function generateHash (string $password): string;
 }

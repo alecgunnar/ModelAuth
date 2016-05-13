@@ -6,12 +6,12 @@ use AlecGunnar\SimpleAuth\AuthenticatableInterface;
 use AlecGunnar\SimpleAuth\HashSchemeInterface;
 
 class TestAuthenticatable implements AuthenticatableInterface {
-    public function getPasswordHash () { }
+    public function getPasswordHash (): string { }
 }
 
 class TestHashScheme implements HashSchemeInterface {
-    public function verifyPassword (string $hash, string $password) { }
-    public function generateHash (string $password) { }
+    public function verifyPassword (string $hash, string $password): bool { }
+    public function generateHash (string $password): string { }
 }
 
 class AuthenticatorTest extends PHPUnit_Framework_TestCase {

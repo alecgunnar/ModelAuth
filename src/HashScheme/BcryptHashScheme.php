@@ -13,14 +13,14 @@ class BcryptHashScheme implements HashSchemeInterface {
     /**
      * @inheritDoc
      */
-    public function verifyPassword (string $hash, string $password) {
+    public function verifyPassword (string $hash, string $password): bool {
         return password_verify($password, $hash);
     }
 
     /**
      * @inheritDoc
      */
-    public function generateHash (string $password) {
+    public function generateHash (string $password): string {
         return password_hash($password, PASSWORD_BCRYPT);
     }
 }
